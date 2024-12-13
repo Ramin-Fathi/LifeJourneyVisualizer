@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   overflow-x: hidden; /* Prevent horizontal scroll */
-  font-size: 1rem; /* Base font size */
+  font-size: 1rem;
 }
 
 /* Header */
@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 2%;
+  gap: 2%; /* Relative spacing between sections */
   padding: 5%;
   max-width: 100%; /* Prevent exceeding viewport width */
   margin: auto;
@@ -37,7 +37,7 @@ body {
 /* Info section */
 .info-section {
   flex: 1;
-  width: 100%; /* Full width for all devices */
+  width: 100%;
   background: #fff;
   border-radius: 0.5rem;
   padding: 5%;
@@ -138,53 +138,28 @@ body {
   background: #FFF;
 }
 
-/* Message section */
-.message-section {
-  background: #fff;
-  border-radius: 0.5rem;
-  padding: 5%;
-  margin: 2% auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 100%; /* Prevent overflow */
-}
-
-.message-section h2 {
-  text-align: center;
-  color: #2196F3;
-  font-size: 1.5rem;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  background: #f1f1f1;
-  color: #666;
-  padding: 1rem 0;
-  margin-top: auto;
-  font-size: 0.9rem;
-}
-
 /* Responsive styles */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
-    padding: 5%;
+    padding: 2%; /* Reduce padding */
   }
 
-  .info-section {
-    width: 100%; /* Full width for info section */
-    padding: 5%;
-  }
-
+  .info-section,
   .grid-section {
-    width: 100%; /* Full width for grid section */
-    padding: 5%;
+    width: 100%; /* Full width for both sections */
+    padding: 2%;
+    margin: 0;
   }
 
   .stats-cards {
-    grid-template-columns: 1fr; /* Single column for cards */
+    grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(52, 0.8rem); /* Smaller grid for narrow screens */
   }
 
   .progress-container {
