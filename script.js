@@ -1,22 +1,24 @@
-// Constants for calculation
-const MAX_YEARS = 85; // Average life expectancy
+// Constants for life calculations
+const MAX_YEARS = 85; // Average lifespan
 const WEEKS_IN_YEAR = 52;
 const TOTAL_WEEKS = MAX_YEARS * WEEKS_IN_YEAR;
 
-// Function to calculate and display progress
+// Function to calculate and display life progress
 function calculateLifeProgress() {
   const birthdateInput = document.getElementById("birthdate").value; // Get birthdate input
   if (!birthdateInput) {
-    alert("Please enter your date of birth!"); // Alert if no date entered
+    alert("Please enter your date of birth!"); // Alert if no input is provided
     return;
   }
 
   const birthdate = new Date(birthdateInput);
   const today = new Date();
 
-  // Calculate differences
+  // Calculate time differences
   const ageInMilliseconds = today - birthdate;
   const weeksPassed = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 7));
+  const percentagePassed = Math.min((weeksPassed / TOTAL_WEEKS) * 100, 100);
+
   const yearsPassed = Math.floor(weeksPassed / WEEKS_IN_YEAR);
   const monthsPassed = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44));
   const daysPassed = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24));
@@ -32,18 +34,26 @@ function calculateLifeProgress() {
   const minutesRemaining = hoursRemaining * 60 - (minutesPassed % 60);
   const secondsRemaining = minutesRemaining * 60 - (secondsPassed % 60);
 
-  // Update Progress Bar
+  // Update progress bar width
   const progressBar = document.getElementById("progress-bar");
-  progressBar.style.width = `${(weeksPassed / TOTAL_WEEKS) * 100}%`;
+  progressBar.style.width = `${percentagePassed}%`;
 
-  // Update Progress Text
+  // Change progress bar color based on percentage
+  if (percentagePassed < 30) {
+    progressBar.style.backgroundColor = "#4CAF50"; // Green
+  } else if (percentagePassed < 70) {
+    progressBar.style.backgroundColor = "#FF9800"; // Orange
+  } else {
+    progressBar.style.backgroundColor = "#F44336"; // Red
+  }
+
+  // Update progress text
   const progressText = document.getElementById("progress-text");
-  progressText.textContent = `You've lived ${weeksPassed} weeks (${(
-    (weeksPassed / TOTAL_WEEKS) *
-    100
-  ).toFixed(2)}% of your expected life).`;
+  progressText.textContent = `You've lived ${weeksPassed} weeks (${percentagePassed.toFixed(
+    2
+  )}% of your expected life).`;
 
-  // Update Life Stats
+  // Update life stats
   document.getElementById("years").textContent = `Years: ${yearsPassed} passed, ${yearsRemaining} remaining`;
   document.getElementById("months").textContent = `Months: ${monthsPassed} passed, ${monthsRemaining} remaining`;
   document.getElementById("weeks").textContent = `Weeks: ${weeksPassed} passed, ${weeksRemaining} remaining`;
@@ -52,7 +62,7 @@ function calculateLifeProgress() {
   document.getElementById("minutes").textContent = `Minutes: ${minutesPassed} passed, ${minutesRemaining} remaining`;
   document.getElementById("seconds").textContent = `Seconds: ${secondsPassed} passed, ${secondsRemaining} remaining`;
 
-  // Update Life Grid
+  // Update life grid (checkboxes)
   const lifeGrid = document.getElementById("life-grid");
   lifeGrid.innerHTML = ""; // Clear previous grid
 
