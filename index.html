@@ -11,23 +11,23 @@
     <!-- Left side: Input and info section -->
     <div class="info-section">
       <h1>Life Progress Tracker</h1>
-      <input type="date" id="birthdate" />
-      <button onclick="calculateLifeProgress()">Submit</button>
-      
+      <p class="description">Each box represents one week of your life. Colored boxes show the weeks you've lived.</p>
+      <input type="date" id="birthdate" class="styled-input" />
+      <button class="styled-button" onclick="calculateLifeProgress()">Submit</button>
+
       <div class="progress-container">
         <div class="progress-bar" id="progress-bar"></div>
       </div>
 
-      <p id="progress-text"></p>
-      <ul id="life-stats">
-        <li id="years"></li>
-        <li id="months"></li>
-        <li id="weeks"></li>
-        <li id="days"></li>
-        <li id="hours"></li>
-        <li id="minutes"></li>
-        <li id="seconds"></li>
-      </ul>
+      <div class="stats-cards">
+        <div class="card" id="years"></div>
+        <div class="card" id="months"></div>
+        <div class="card" id="weeks"></div>
+        <div class="card" id="days"></div>
+        <div class="card" id="hours"></div>
+        <div class="card" id="minutes"></div>
+        <div class="card" id="seconds"></div>
+      </div>
     </div>
 
     <!-- Center: Life grid section -->
@@ -35,7 +35,8 @@
       <div class="grid" id="life-grid"></div>
     </div>
   </div>
-<!-- Encouraging message section -->
+
+  <!-- Encouraging message section -->
   <div class="message-section" id="message-section">
     <h2>Your Golden Opportunities</h2>
     <p id="age-group-message"></p>
@@ -51,3 +52,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
