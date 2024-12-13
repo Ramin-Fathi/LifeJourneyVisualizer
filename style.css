@@ -1,92 +1,93 @@
-/* بدنه اصلی */
+/* Main body styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light background */
   color: #333;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-/* کانتینر اصلی */
+/* Main container */
 .container {
   display: flex;
   gap: 20px;
 }
 
-/* بخش اطلاعات سمت چپ */
+/* Left-side info section */
 .info-section {
   flex: 1;
   max-width: 300px;
 }
 
+/* Right-side grid section */
 .grid-section {
   flex: 2;
   overflow-x: auto;
 }
 
-/* گرید چک‌باکس‌ها */
+/* Life grid for boxes */
 .grid {
   display: grid;
   grid-template-columns: repeat(52, 5px);
   gap: 1px;
 }
 
-/* استایل باکس‌ها */
+/* Individual boxes */
 .box {
   width: 5px;
   height: 5px;
-  border: 1px solid #ddd; /* مرز کمرنگ‌تر */
+  border: 1px solid #ddd; /* Lighter border */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .box.passed {
-  background-color: #4CAF50; /* سبز برای گذشته */
+  background-color: #4CAF50; /* Green for passed weeks */
 }
 
 .box:hover {
-  background-color: #FFC107; /* زرد هنگام هاور */
-  transform: scale(1.2); /* بزرگ‌تر شدن هنگام هاور */
+  background-color: #FFC107; /* Yellow on hover */
+  transform: scale(1.2); /* Slight zoom on hover */
 }
 
-/* استایل Progress Bar */
+/* Progress bar styling */
 .progress-container {
   margin: 20px 0;
   width: 100%;
   height: 20px;
-  background: #e0e0e0;
+  background: #e0e0e0; /* Light gray background */
   border-radius: 10px;
   overflow: hidden;
 }
 
 .progress-bar {
   height: 100%;
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Green */
   width: 0;
   transition: width 0.5s ease, background-color 0.3s ease;
 }
 
-/* استایل دکمه‌ها */
+/* Button styling */
 button {
   padding: 10px 20px;
-  background-color: #2196F3;
+  background-color: #2196F3; /* Blue */
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   margin-top: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #1976D2;
-  transform: scale(1.05);
+  background-color: #1976D2; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scale effect */
 }
 
-/* لیست اطلاعات */
+/* List for life stats */
 #life-stats {
   list-style: none;
   padding: 0;
@@ -95,8 +96,8 @@ button:hover {
 #life-stats li {
   margin: 5px 0;
   padding: 5px;
-  background-color: #f5f5f5;
-  border-left: 5px solid #2196F3;
+  background-color: #f5f5f5; /* Light background */
+  border-left: 5px solid #2196F3; /* Blue left border */
   border-radius: 3px;
   font-size: 14px;
 }
