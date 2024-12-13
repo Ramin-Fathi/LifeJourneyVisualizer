@@ -148,7 +148,7 @@ body {
 
   .info-section,
   .grid-section {
-    width: 100%; /* Full width for both sections */
+    width: 80%; /* Full width for both sections */
     padding: 2%;
     margin: 0;
   }
