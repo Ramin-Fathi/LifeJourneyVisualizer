@@ -125,24 +125,24 @@ body {
 /* Life grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(52, 0.5rem); /* Smaller columns for compact grid */
-  gap: 0.05rem; /* Smaller gap between boxes */
-  justify-content: center; /* Center the grid */
+  grid-template-columns: repeat(52, 0.5rem); /* Desktop size for boxes */
+  gap: 0.05rem;
+  justify-content: center;
 }
 
 .box {
-  width: 0.5rem; /* Smaller width */
-  height: 0.5rem; /* Smaller height */
+  width: 0.5rem; /* Desktop width */
+  height: 0.5rem; /* Desktop height */
   background: #e0e0e0;
   border: 0.05rem solid #ddd;
 }
 
 .box.passed {
-  background: #4CAF50; /* Color for passed weeks */
+  background: #4CAF50; /* Passed weeks */
 }
 
 .box.future {
-  background: #FFF; /* Default color for future weeks */
+  background: #FFF; /* Future weeks */
 }
 
 
@@ -219,13 +219,12 @@ body {
 
 @media (max-width: 768px) {
   .grid {
-    grid-template-columns: repeat(52, 0.4rem); /* Even smaller for small screens */
+    grid-template-columns: repeat(52, 0.25rem); /* Reduce box size for smaller screens */
     gap: 0.03rem;
   }
 
   .box {
-    width: 1rem;
-    height: 1rem;
-background: #FF0000;
+    width: 0.25rem; /* Half the desktop width */
+    height: 0.25rem; /* Half the desktop height */
   }
 }
