@@ -19,6 +19,8 @@ function calculateLifeProgress() {
   const weeksPassed = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 7));
   const percentagePassed = Math.min((weeksPassed / TOTAL_WEEKS) * 100, 100);
 
+  console.log(`Weeks Passed: ${weeksPassed}, Total Weeks: ${TOTAL_WEEKS}, Percentage Passed: ${percentagePassed}`);
+
   const yearsPassed = Math.floor(weeksPassed / WEEKS_IN_YEAR);
   const monthsPassed = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44));
   const daysPassed = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24));
@@ -36,7 +38,12 @@ function calculateLifeProgress() {
 
   // Update progress bar width
   const progressBar = document.getElementById("progress-bar");
-  progressBar.style.width = `${percentagePassed}%`;
+  if (progressBar) {
+    progressBar.style.width = `${percentagePassed}%`;
+    progressBar.textContent = `${percentagePassed.toFixed(2)}%`; // Optional: Display percentage
+  } else {
+    console.error("Element with ID 'progress-bar' not found in the DOM.");
+  }
 
   // Update life stats
   document.getElementById("years").textContent = `Years: ${yearsPassed} passed, ${yearsRemaining} remaining`;
