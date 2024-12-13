@@ -33,7 +33,8 @@ function calculateLifeProgress() {
   const hoursRemaining = daysRemaining * 24 - (hoursPassed % 24);
   const minutesRemaining = hoursRemaining * 60 - (minutesPassed % 60);
   const secondsRemaining = minutesRemaining * 60 - (secondsPassed % 60);
- // Update progress bar width
+
+  // Update progress bar width
   const progressBar = document.getElementById("progress-bar");
   progressBar.style.width = `${percentagePassed}%`;
 
@@ -70,7 +71,8 @@ function calculateLifeProgress() {
       lifeGrid.appendChild(box);
     }
   }
-updateEncouragingMessages(yearsPassed);
+
+  updateEncouragingMessages(yearsPassed);
 }
 
 // Function to generate color gradient based on life stage
@@ -91,7 +93,8 @@ function updateEncouragingMessages(yearsPassed) {
 
   let ageGroup = "";
   let opportunities = [];
-if (yearsPassed < 13) {
+
+  if (yearsPassed < 13) {
     ageGroup = "Childhood";
     opportunities = [
       "Discover new hobbies and interests.",
@@ -124,4 +127,25 @@ if (yearsPassed < 13) {
       "Pursue hobbies you've always wanted to try.",
       "Mentor younger generations.",
       "Focus on health and wellness.",
-      "Explore
+      "Explore new professional challenges.",
+      "Travel to places you've dreamed of visiting.",
+    ];
+  } else {
+    ageGroup = "Golden Years";
+    opportunities = [
+      "Share your wisdom and experiences.",
+      "Spend quality time with loved ones.",
+      "Pursue lifelong learning opportunities.",
+      "Focus on relaxation and enjoying life.",
+      "Contribute to your community or charity.",
+    ];
+  }
+
+  ageGroupMessage.textContent = `You are in your ${ageGroup}. Here are some opportunities to embrace:`;
+
+  opportunities.forEach((opportunity) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = opportunity;
+    opportunityList.appendChild(listItem);
+  });
+}
