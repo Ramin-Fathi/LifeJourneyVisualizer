@@ -111,8 +111,7 @@ function updateEncouragingMessages(yearsPassed) {
   if (yearsPassed < 13) {
     ageGroup = "Childhood";
     opportunities = [
-      "🔧 Build Healthy Habits for the Future:
-🏋️‍♂️ It takes just 🕒 one month to turn daily exercise into a habit. Many successful athletes started in their teens and achieved remarkable feats. 🏆 Regular training can boost your confidence and energy.",
+      "🔧 Build Healthy Habits for the Future: 🏋️‍♂️ It takes just 🕒 one month to turn daily exercise into a habit. Many successful athletes started in their teens and achieved remarkable feats. 🏆 Regular training can boost your confidence and energy.",
       "Spend quality time with family.",
       "Learn basic life skills.",
       "Explore creativity through art or music.",
