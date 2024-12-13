@@ -38,12 +38,6 @@ function calculateLifeProgress() {
   const progressBar = document.getElementById("progress-bar");
   progressBar.style.width = `${percentagePassed}%`;
 
-  // Update progress text
-  const progressText = document.getElementById("progress-text");
-  progressText.textContent = `You've lived ${weeksPassed} weeks (${percentagePassed.toFixed(
-    2
-  )}% of your expected life).`;
-
   // Update life stats
   document.getElementById("years").textContent = `Years: ${yearsPassed} passed, ${yearsRemaining} remaining`;
   document.getElementById("months").textContent = `Months: ${monthsPassed} passed, ${monthsRemaining} remaining`;
@@ -85,7 +79,6 @@ function getBoxColor(currentWeek, weeksPassed, totalWeeks) {
 
 // Function to update encouraging messages
 function updateEncouragingMessages(yearsPassed) {
-  const messageSection = document.getElementById("message-section");
   const ageGroupMessage = document.getElementById("age-group-message");
   const opportunityList = document.getElementById("opportunity-list");
 
