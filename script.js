@@ -18,8 +18,9 @@ function calculateLifeProgress() {
   const ageInMilliseconds = today - birthdate;
   const weeksPassed = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 7));
   const percentagePassed = Math.min((weeksPassed / TOTAL_WEEKS) * 100, 100);
+  const percentageRemaining = 100 - percentagePassed;
 
-  console.log(`Weeks Passed: ${weeksPassed}, Total Weeks: ${TOTAL_WEEKS}, Percentage Passed: ${percentagePassed}`);
+  console.log(`Weeks Passed: ${weeksPassed}, Total Weeks: ${TOTAL_WEEKS}, Percentage Passed: ${percentagePassed}%`);
 
   const yearsPassed = Math.floor(weeksPassed / WEEKS_IN_YEAR);
   const monthsPassed = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 30.44));
@@ -36,13 +37,19 @@ function calculateLifeProgress() {
   const minutesRemaining = hoursRemaining * 60 - (minutesPassed % 60);
   const secondsRemaining = minutesRemaining * 60 - (secondsPassed % 60);
 
-  // Update progress bar width
+  // Update progress bar width and color
   const progressBar = document.getElementById("progress-bar");
   if (progressBar) {
     progressBar.style.width = `${percentagePassed}%`;
-    progressBar.textContent = `${percentagePassed.toFixed(2)}%`; // Optional: Display percentage
+    progressBar.style.backgroundColor = getProgressColor(percentagePassed);
   } else {
     console.error("Element with ID 'progress-bar' not found in the DOM.");
+  }
+
+  // Update progress text
+  const progressText = document.getElementById("progress-text");
+  if (progressText) {
+    progressText.textContent = `${percentagePassed.toFixed(2)}% of your life has passed, ${percentageRemaining.toFixed(2)}% remaining.`;
   }
 
   // Update life stats
@@ -74,6 +81,13 @@ function calculateLifeProgress() {
   }
 
   updateEncouragingMessages(yearsPassed);
+}
+
+// Function to determine progress bar color based on percentage
+function getProgressColor(percentage) {
+  if (percentage < 30) return "#4CAF50"; // Green
+  if (percentage < 70) return "#FFC107"; // Yellow
+  return "#F44336"; // Red
 }
 
 // Function to generate color gradient based on life stage
