@@ -217,8 +217,8 @@ body {
   }
 
   .grid {
-    grid-template-columns: repeat(52, 0.4rem); /* Even smaller for small screens */
-    gap: 0.03rem;
+    grid-template-columns: repeat(52, 0.2rem); /* Even smaller for small screens */
+    gap: 0.02rem;
   }
 
   .box {
