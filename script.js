@@ -33,19 +33,9 @@ function calculateLifeProgress() {
   const hoursRemaining = daysRemaining * 24 - (hoursPassed % 24);
   const minutesRemaining = hoursRemaining * 60 - (minutesPassed % 60);
   const secondsRemaining = minutesRemaining * 60 - (secondsPassed % 60);
-
-  // Update progress bar width
+ // Update progress bar width
   const progressBar = document.getElementById("progress-bar");
   progressBar.style.width = `${percentagePassed}%`;
-
-  // Change progress bar color based on percentage
-  if (percentagePassed < 30) {
-    progressBar.style.backgroundColor = "#4CAF50"; // Green
-  } else if (percentagePassed < 70) {
-    progressBar.style.backgroundColor = "#FF9800"; // Orange
-  } else {
-    progressBar.style.backgroundColor = "#F44336"; // Red
-  }
 
   // Update progress text
   const progressText = document.getElementById("progress-text");
@@ -70,10 +60,68 @@ function calculateLifeProgress() {
     for (let week = 0; week < WEEKS_IN_YEAR; week++) {
       const box = document.createElement("div");
       box.classList.add("box");
-      if (year * WEEKS_IN_YEAR + week < weeksPassed) {
+      const currentWeek = year * WEEKS_IN_YEAR + week;
+      if (currentWeek < weeksPassed) {
         box.classList.add("passed");
+        box.style.backgroundColor = getBoxColor(currentWeek, weeksPassed, TOTAL_WEEKS);
+      } else {
+        box.classList.add("future");
       }
       lifeGrid.appendChild(box);
     }
   }
+updateEncouragingMessages(yearsPassed);
 }
+
+// Function to generate color gradient based on life stage
+function getBoxColor(currentWeek, weeksPassed, totalWeeks) {
+  const progress = currentWeek / totalWeeks;
+  if (progress < 0.3) return "#4CAF50"; // Green for early life
+  if (progress < 0.7) return "#FFC107"; // Yellow for middle life
+  return "#2196F3"; // Blue for later life
+}
+
+// Function to update encouraging messages
+function updateEncouragingMessages(yearsPassed) {
+  const messageSection = document.getElementById("message-section");
+  const ageGroupMessage = document.getElementById("age-group-message");
+  const opportunityList = document.getElementById("opportunity-list");
+
+  opportunityList.innerHTML = ""; // Clear previous messages
+
+  let ageGroup = "";
+  let opportunities = [];
+if (yearsPassed < 13) {
+    ageGroup = "Childhood";
+    opportunities = [
+      "Discover new hobbies and interests.",
+      "Spend quality time with family.",
+      "Learn basic life skills.",
+      "Explore creativity through art or music.",
+      "Make new friends and strengthen bonds.",
+    ];
+  } else if (yearsPassed < 20) {
+    ageGroup = "Teenage Years";
+    opportunities = [
+      "Focus on education and career planning.",
+      "Build healthy habits for the future.",
+      "Explore your passions and talents.",
+      "Learn financial responsibility.",
+      "Volunteer and give back to the community.",
+    ];
+  } else if (yearsPassed < 40) {
+    ageGroup = "Adulthood";
+    opportunities = [
+      "Advance your career or start a new one.",
+      "Travel and experience new cultures.",
+      "Build meaningful relationships.",
+      "Invest in personal development.",
+      "Start a family or strengthen family ties.",
+    ];
+  } else if (yearsPassed < 60) {
+    ageGroup = "Middle Age";
+    opportunities = [
+      "Pursue hobbies you've always wanted to try.",
+      "Mentor younger generations.",
+      "Focus on health and wellness.",
+      "Explore
