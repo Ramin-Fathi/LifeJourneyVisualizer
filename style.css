@@ -8,6 +8,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-size: 1rem; /* Base font size */
 }
 
 /* Header */
@@ -15,7 +18,8 @@ body {
   text-align: center;
   background: #2196F3;
   color: white;
-  padding: 10px 0;
+  padding: 1rem 0; /* Relative padding */
+  font-size: 1.5rem; /* Scale header text size */
 }
 
 /* Main container */
@@ -23,38 +27,41 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
-  max-width: 95%;
+  gap: 2%; /* Relative spacing between sections */
+  padding: 5%; /* Padding relative to viewport width */
+  max-width: 1200px;
   margin: auto;
 }
 
 /* Info section */
 .info-section {
   flex: 1;
-  min-width: 70%;
-  background: #FF0000;
-  border-radius: 10px;
-  padding: 20px;
+  width: 100%;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 5%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 /* Styled input and button */
 .styled-input {
-  width: 70%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 2px solid #4CAF50;
-  border-radius: 5px;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 0.2rem solid #4CAF50;
+  border-radius: 0.5rem;
+  font-size: 1rem;
 }
 
 .styled-button {
-  width: 70%;
-  padding: 10px;
+  width: 100%;
+  padding: 0.7rem;
   background: #2196F3;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -64,43 +71,45 @@ body {
 
 /* Progress bar container */
 .progress-container {
-  width: 70%;
-  height: 10px;
+  width: 100%;
+  height: 1.5rem;
   background: #e0e0e0;
-  border-radius: 10px;
-  margin: 20px 0;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
 }
 
 .progress-bar {
-  height: 70%;
+  height: 100%;
   width: 0;
   background: #4CAF50;
   transition: width 0.5s ease;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 /* Stats cards */
 .stats-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .card {
   background: #fff;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-size: 1rem;
 }
 
 /* Grid section */
 .grid-section {
   flex: 2;
+  width: 100%;
   background: #fff;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 2%;
+  border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 100%;
   overflow-x: auto;
@@ -109,15 +118,15 @@ body {
 /* Life grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(52, 5px);
-  gap: 1px;
+  grid-template-columns: repeat(52, 1rem); /* Relative size for boxes */
+  gap: 0.1rem;
 }
 
 .box {
-  width: 5px;
-  height: 5px;
+  width: 1rem;
+  height: 1rem;
   background: #e0e0e0;
-  border: 1px solid #ddd;
+  border: 0.1rem solid #ddd;
 }
 
 .box.passed {
@@ -131,9 +140,9 @@ body {
 /* Message section */
 .message-section {
   background: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
+  border-radius: 0.5rem;
+  padding: 5%;
+  margin: 2% auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 1200px;
 }
@@ -141,6 +150,7 @@ body {
 .message-section h2 {
   text-align: center;
   color: #2196F3;
+  font-size: 1.5rem;
 }
 
 /* Footer */
@@ -148,27 +158,41 @@ body {
   text-align: center;
   background: #f1f1f1;
   color: #666;
-  padding: 10px 0;
+  padding: 1rem 0;
   margin-top: auto;
+  font-size: 0.9rem;
 }
 
 /* Responsive styles */
-@media (max-width: 70%;) {
+@media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
+    padding: 5%;
   }
 
   .info-section {
-    width: 70%; /* Full width */
-    max-width: none; /* Remove max-width constraint */
-    margin: 0 auto; /* Center the section */
+    width: 100%;
+    max-width: 100%;
+    padding: 5%;
   }
 
   .grid-section {
-    width: 70%; /* Full width */
-    max-width: none;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 5%;
+  }
+
+  .stats-cards {
+    grid-template-columns: 1fr; /* Single column for cards in mobile */
+    gap: 1rem;
+  }
+
+  .progress-container {
+    height: 1.2rem;
+  }
+
+  .progress-bar {
+    height: 100%;
   }
 }
-
