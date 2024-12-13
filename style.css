@@ -215,14 +215,16 @@ body {
     font-size: 0.9rem;
     padding: 0.4rem;
   }
+}
 
+@media (max-width: 768px) {
   .grid {
-    grid-template-columns: repeat(52, 0.2rem); /* Even smaller for small screens */
-    gap: 0.02rem;
+    grid-template-columns: repeat(52, 0.4rem); /* Even smaller for small screens */
+    gap: 0.03rem;
   }
 
   .box {
-    width: 0.02rem;
-    height: 0.02rem;
+    width: 0.4rem;
+    height: 0.4rem;
   }
 }
