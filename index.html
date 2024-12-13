@@ -3,10 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life Journey Visualizer</title>
+  <title>Life Progress Tracker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to Life Journey Visualizer</h1>
-  <p>This is your progress tracker!</p>
+  <div class="container">
+    <h1>Life Progress Tracker</h1>
+    <p>Enter your date of birth to see how much of your life has passed:</p>
+
+    <!-- Input for Date of Birth -->
+    <input type="date" id="birthdate" />
+    <button onclick="calculateLifeProgress()">Submit</button>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <p id="progress-text"></p>
+
+    <!-- Life Weeks Grid -->
+    <div class="grid" id="life-grid"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
