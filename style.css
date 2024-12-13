@@ -159,8 +159,16 @@ body {
     align-items: center;
   }
 
-  .info-section,
+  .info-section {
+    width: 100%; /* Full width */
+    max-width: none; /* Remove max-width constraint */
+    margin: 0 auto; /* Center the section */
+  }
+
   .grid-section {
-    max-width: 100%;
+    width: 100%; /* Full width */
+    max-width: none;
+    margin: 0 auto;
   }
 }
+
