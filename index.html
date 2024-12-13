@@ -7,10 +7,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <header class="header">
+    <h1>Life Progress Tracker</h1>
+  </header>
+
+  <main class="container">
     <!-- Input and Info Section -->
     <div class="info-section">
-      <h1>Life Progress Tracker</h1>
       <p class="description">Each box represents one week of your life. Colored boxes show the weeks you've lived.</p>
       <input type="date" id="birthdate" class="styled-input" placeholder="Enter your birthdate">
       <button class="styled-button" onclick="calculateLifeProgress()">Submit</button>
@@ -19,7 +22,7 @@
       <div class="progress-container">
         <div class="progress-bar" id="progress-bar"></div>
       </div>
-      <p id="progress-text">ُTest</p>
+      <p id="progress-text" class="progress-text"></p>
 
       <!-- Stats Cards -->
       <div class="stats-cards">
@@ -37,17 +40,17 @@
     <div class="grid-section">
       <div class="grid" id="life-grid"></div>
     </div>
-  </div>
+  </main>
 
   <!-- Encouraging Messages Section -->
-  <div class="message-section" id="message-section">
+  <section class="message-section" id="message-section">
     <h2>Your Golden Opportunities</h2>
     <p id="age-group-message"></p>
     <ul id="opportunity-list"></ul>
-  </div>
+  </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     <p>Created by <strong>Ramin Fathi</strong></p>
   </footer>
 
