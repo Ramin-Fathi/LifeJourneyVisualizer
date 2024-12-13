@@ -226,5 +226,6 @@ body {
   .box {
     width: 0.4rem;
     height: 0.4rem;
+background: #FF0000;
   }
 }
