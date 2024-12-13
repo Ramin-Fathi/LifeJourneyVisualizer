@@ -8,49 +8,48 @@
 </head>
 <body>
   <div class="container">
-    <!-- Left side: Input and info section -->
+    <!-- Input and Info Section -->
     <div class="info-section">
       <h1>Life Progress Tracker</h1>
       <p class="description">Each box represents one week of your life. Colored boxes show the weeks you've lived.</p>
-      <input type="date" id="birthdate" class="styled-input" />
+      <input type="date" id="birthdate" class="styled-input" placeholder="Enter your birthdate">
       <button class="styled-button" onclick="calculateLifeProgress()">Submit</button>
 
+      <!-- Progress Bar -->
       <div class="progress-container">
         <div class="progress-bar" id="progress-bar"></div>
       </div>
 
+      <!-- Stats Cards -->
       <div class="stats-cards">
-        <div class="card" id="years"></div>
-        <div class="card" id="months"></div>
-        <div class="card" id="weeks"></div>
-        <div class="card" id="days"></div>
-        <div class="card" id="hours"></div>
-        <div class="card" id="minutes"></div>
-        <div class="card" id="seconds"></div>
+        <div class="card" id="years">Years: </div>
+        <div class="card" id="months">Months: </div>
+        <div class="card" id="weeks">Weeks: </div>
+        <div class="card" id="days">Days: </div>
+        <div class="card" id="hours">Hours: </div>
+        <div class="card" id="minutes">Minutes: </div>
+        <div class="card" id="seconds">Seconds: </div>
       </div>
     </div>
 
-    <!-- Center: Life grid section -->
+    <!-- Life Grid Section -->
     <div class="grid-section">
       <div class="grid" id="life-grid"></div>
     </div>
   </div>
 
-  <!-- Encouraging message section -->
+  <!-- Encouraging Messages Section -->
   <div class="message-section" id="message-section">
     <h2>Your Golden Opportunities</h2>
     <p id="age-group-message"></p>
     <ul id="opportunity-list"></ul>
   </div>
 
+  <!-- Footer -->
   <footer>
-    <p style="text-align: center; font-size: 12px; margin-top: 20px; color: #666;">
-      Created by <strong>Ramin Fathi</strong>
-    </p>
+    <p>Created by <strong>Ramin Fathi</strong></p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
