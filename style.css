@@ -125,25 +125,26 @@ body {
 /* Life grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(52, 1rem); /* Adjust grid for mobile */
-  gap: 0.1rem;
-  justify-content: center;
+  grid-template-columns: repeat(52, 0.5rem); /* Smaller columns for compact grid */
+  gap: 0.05rem; /* Smaller gap between boxes */
+  justify-content: center; /* Center the grid */
 }
 
 .box {
-  width: 5px;
-  height: 5px;
+  width: 0.5rem; /* Smaller width */
+  height: 0.5rem; /* Smaller height */
   background: #e0e0e0;
-  border: 0.1rem solid #ddd;
+  border: 0.05rem solid #ddd;
 }
 
 .box.passed {
-  background: #4CAF50;
+  background: #4CAF50; /* Color for passed weeks */
 }
 
 .box.future {
-  background: #FFF;
+  background: #FFF; /* Default color for future weeks */
 }
+
 
 /* Message section */
 .message-section {
@@ -216,6 +217,12 @@ body {
   }
 
   .grid {
-    grid-template-columns: repeat(52, 0.7rem); /* Adjust grid size further */
+    grid-template-columns: repeat(52, 0.4rem); /* Even smaller for small screens */
+    gap: 0.03rem;
+  }
+
+  .box {
+    width: 0.4rem;
+    height: 0.4rem;
   }
 }
