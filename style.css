@@ -153,20 +153,20 @@ body {
 }
 
 /* Responsive styles */
-@media (max-width: 100%;) {
+@media (max-width: 90%;) {
   .container {
     flex-direction: column;
     align-items: center;
   }
 
   .info-section {
-    width: 100%; /* Full width */
+    width: 90%; /* Full width */
     max-width: none; /* Remove max-width constraint */
     margin: 0 auto; /* Center the section */
   }
 
   .grid-section {
-    width: 100%; /* Full width */
+    width: 90%; /* Full width */
     max-width: none;
     margin: 0 auto;
   }
