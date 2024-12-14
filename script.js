@@ -1,5 +1,5 @@
 // Constants for life calculations
-const MAX_YEARS = 85; // Average lifespan
+const MAX_YEARS = 90; // Average lifespan
 const WEEKS_IN_YEAR = 52;
 const TOTAL_WEEKS = MAX_YEARS * WEEKS_IN_YEAR;
 
@@ -87,7 +87,7 @@ function calculateLifeProgress() {
 function getProgressColor(percentage) {
   if (percentage < 30) return "#4CAF50"; // Green
   if (percentage < 70) return "#FFC107"; // Yellow
-  return "#F44336"; // Red
+  return "#c44cf7"; // Red
 }
 
 // Function to generate color gradient based on life stage
