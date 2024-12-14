@@ -95,7 +95,7 @@ function getBoxColor(currentWeek, weeksPassed, totalWeeks) {
   const progress = currentWeek / totalWeeks;
   if (progress < 0.3) return "#4CAF50"; // Green for early life
   if (progress < 0.7) return "#FFC107"; // Yellow for middle life
-  return "#2196F3"; // Blue for later life
+  return "#c44cf7"; // Blue for later life
 }
 
 // Function to update encouraging messages
