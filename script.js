@@ -108,52 +108,56 @@ function updateEncouragingMessages(yearsPassed) {
   let ageGroup = "";
   let opportunities = [];
 
-  if (yearsPassed < 13) {
+if (yearsPassed < 13) {
     ageGroup = "Childhood";
     opportunities = [
-      "Build Healthy Habits for the Future: It takes just one month to turn daily exercise into a habit. Many successful athletes started in their teens and achieved remarkable feats. Regular training can boost your confidence and energy.",
-      "Spend quality time with family.",
-      "Learn basic life skills.",
-      "Explore creativity through art or music.",
-      "Make new friends and strengthen bonds.",
+        "🎨 Discover new hobbies and interests. It takes just one week to start learning a new skill like painting, writing, or sports. Many great artists and athletes began exploring their talents at this age.",
+        "👨‍👩‍👧‍👦 Spend quality time with family and build strong bonds. This is the foundation for lifelong support and love.",
+        "🍳 Learn basic life skills such as cooking, organizing, or managing simple tasks. These small steps lead to independence.",
+        "🎶 Explore creativity through art, music, or games. Creativity at a young age opens doors to innovation later in life.",
+        "🤝 Make new friends and strengthen social bonds. Friendships formed now often last a lifetime."
     ];
-  } else if (yearsPassed < 20) {
+} else if (yearsPassed < 20) {
     ageGroup = "Teenage Years";
     opportunities = [
-      "Focus on education and career planning.",
-      "Build healthy habits for the future.",
-      "Explore your passions and talents.",
-      "Learn financial responsibility.",
-      "Volunteer and give back to the community.",
+        "📚 Focus on education and career planning. These years set the foundation for your future success.",
+        "💪 Build healthy habits for the future. Regular exercise and a balanced diet can become lifelong practices.",
+        "✨ Explore your passions and talents. Join clubs, participate in competitions, and discover what excites you.",
+        "💵 Learn financial responsibility. Start saving, budgeting, or even earning through small jobs.",
+        "🌍 Volunteer and give back to the community. A month of community work can create lasting impacts and connections."
     ];
-  } else if (yearsPassed < 40) {
+} else if (yearsPassed < 40) {
     ageGroup = "Adulthood";
     opportunities = [
-      "Advance your career or start a new one.",
-      "Travel and experience new cultures.",
-      "Build meaningful relationships.",
-      "Invest in personal development.",
-      "Start a family or strengthen family ties.",
+        "💼 Advance your career or start a new one. Take courses, network, and aim for professional growth.",
+        "✈️ Travel and experience new cultures. A single trip can broaden your perspective and inspire fresh ideas.",
+        "🤝 Build meaningful relationships. Invest time in friendships, partnerships, and family bonds.",
+        "📖 Invest in personal development. Read books, attend workshops, or learn new skills.",
+        "👨‍👩‍👧‍👦 Start a family or strengthen existing relationships. Building a strong support system is invaluable."
     ];
-  } else if (yearsPassed < 60) {
-    ageGroup = "Middle Age";
+} else if (yearsPassed < 60) {
+    ageGroup = "Middle Adulthood";
     opportunities = [
-      "Pursue hobbies you've always wanted to try.",
-      "Mentor younger generations.",
-      "Focus on health and wellness.",
-      "Explore new professional challenges.",
-      "Travel to places you've dreamed of visiting.",
+        "🎨 Pursue hobbies you’ve always wanted to try. Dedicate time to activities that bring joy and fulfillment.",
+        "👨‍🏫 Mentor younger generations. Share your experiences and guide others towards success.",
+        "🏋️‍♂️ Focus on health and wellness. Establish a fitness routine and prioritize mental health.",
+        "🚀 Embrace new professional challenges. Start a business or explore a new career path.",
+        "🌍 Travel to dream destinations. Experiencing different places can refresh your perspective."
     ];
-  } else {
+} else {
     ageGroup = "Golden Years";
     opportunities = [
-      "Share your wisdom and experiences.",
-      "Spend quality time with loved ones.",
-      "Pursue lifelong learning opportunities.",
-      "Focus on relaxation and enjoying life.",
-      "Contribute to your community or charity.",
+        "📜 Share your wisdom and experiences. Document your stories to inspire others.",
+        "❤️ Spend quality time with loved ones. Create memorable moments with family and friends.",
+        "🧠 Engage in lifelong learning. Take up a course, learn a language, or explore a new subject.",
+        "🌼 Focus on relaxation and enjoying life. Dedicate time to activities that bring you happiness.",
+        "🤝 Contribute to your community or charities. Participate in meaningful projects that make a difference."
     ];
-  }
+}
+
+opportunities.push("🌟 Remember: Life’s boxes are limited but always enough to achieve greatness. Start today, plan well, and witness your progress with each step. It’s the small, consistent actions that lead to monumental achievements.");
+
+
 
   ageGroupMessage.textContent = `You are in your ${ageGroup}. Here are some opportunities to embrace:`;
 
